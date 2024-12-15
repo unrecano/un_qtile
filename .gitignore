@@ -1,0 +1,5 @@
+# Pyhton Ignore
+__pycache__/
+
+# Others
+.ropeproject
