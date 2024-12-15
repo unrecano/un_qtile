@@ -11,7 +11,7 @@ alt = "mod1"
 # Set Qtile config path
 config_path = path.join(path.expanduser("~"), ".config", "qtile")
 # Set Wallpapers path
-wallpaper_path = path.join(path.expanduser("~"), "Pictures", "Wallpapers")
+wallpaper_path = path.join(path.expanduser("~"), "Configurations", "wallpapers")
 
 # Set Wallpaper
 un_wallpaper = f"{wallpaper_path}/wallpaper_19.png"
