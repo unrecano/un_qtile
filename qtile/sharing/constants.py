@@ -30,3 +30,4 @@ un_ui_editor = "zeditor"
 un_cli_editor = "wezterm start nvim"
 # Set Default ScreenShooter
 un_screenshoot = "xfce4-screenshooter"
+
