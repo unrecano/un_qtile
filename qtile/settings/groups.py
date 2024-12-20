@@ -43,7 +43,5 @@ def _shortcuts_by_group(number: int, group: Group) -> List[Key]:
     ]
 
 def groups_keymap(groups: List[Group]):
-    keymap = []
-    for i, group in enumerate(groups, start=1):
-       keymap.extend(_shortcuts_by_group(i, group))
-    return keymap
+    return [.._shortcuts_by_group(i, group) for i, group in enumerate(groups, start=1)]
+
