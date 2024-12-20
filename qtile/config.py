@@ -26,6 +26,7 @@
 
 import os
 import subprocess
+from typing import Any, List
 
 from libqtile import hook
 
@@ -46,8 +47,8 @@ layouts = my_layouts()
 
 widget_defaults = dict(
     font=un_font,
-    fontsize = 12,
-    padding = 4,
+    fontsize=12,
+    padding=4,
 )
 extension_defaults = widget_defaults.copy()
 
@@ -57,7 +58,7 @@ screens = my_screens(my_widgets())
 mouse = my_mouse()
 
 dgroups_key_binder = None
-dgroups_app_rules = []  # type: list
+dgroups_app_rules: List[Any] = []
 follow_mouse_focus = True
 bring_front_click = False
 floats_kept_above = True
@@ -88,7 +89,8 @@ wl_xcursor_size = 24
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
 
-@hook.subscribe.startup_once
-def autostart():
-    home = os.path.expanduser('~/.config/qtile/autostart.sh')
+
+@hook.subscribe.startup_once  # type: ignore
+def autostart() -> None:
+    home = os.path.expanduser("~/.config/qtile/autostart.sh")
     subprocess.call(home)

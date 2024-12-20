@@ -2,9 +2,9 @@ from typing import Any, Dict, List
 
 from libqtile import layout
 from libqtile.config import Match
-from libqtile.layout.base import _SimpleLayoutBase
 
 from sharing.constants import un_font, un_theme
+
 
 def _custom_layout_theme() -> Dict[str, Any]:
     return {
@@ -15,8 +15,10 @@ def _custom_layout_theme() -> Dict[str, Any]:
         "font": un_font,
     }
 
+
 def _custom_monad_tall() -> layout.MonadTall:
     return layout.MonadTall(**_custom_layout_theme())
+
 
 def floating_layout() -> layout.Floating:
     return layout.Floating(
@@ -33,7 +35,8 @@ def floating_layout() -> layout.Floating:
         **_custom_layout_theme(),
     )
 
-def my_layouts() -> List[_SimpleLayoutBase]:
+
+def my_layouts() -> List[layout.Max | layout.MonadTall]:
     return [
         # layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
         layout.Max(),
